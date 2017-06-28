@@ -47,13 +47,15 @@ public class Main {
         String formalname = pro + lname;
         System.out.print("Enter your credit card number, " + formalname + " : ");
         long credit = consoleInput.nextLong();
+        int cash = 100000;
         int length = String.valueOf(credit).length();
         while (length < 14 || length > 16){
             System.out.print("Tsk, tsk! That is not your credit card number.\nTry again: ");
             credit = consoleInput.nextLong();
             length = String.valueOf(credit).length();
         }
-        System.out.println("Correct! Let's begin!");
+        System.out.print("Correct! Let's begin!");
+        System.out.println(" Your cash on hand is " + cash + ".");
         try {
             Thread.sleep(2000);
         } catch(InterruptedException ex) {
@@ -65,9 +67,23 @@ public class Main {
         answer = consoleInput.next();
         System.out.println("Great! Access granted again! $1.2e+52 has been taken from your credit account! Your bank expects you to pay it back within a month!");
         System.out.println((char)27 + "[0;0mLet's continue!");
-        System.out.println("You are in a town. A gigantic duck, twice your size, with a sword walks up to you. He says, 'my name's Joe. Like to come to my house and meet my daughter?\nShe's considered a beauty among giant ducks. Be careful, though, she's very horny.'");
-        System.out.println("Would you like to meet Joe's daughter? Answer yes or no.");
-        answer = consoleInput.next();
-        yesno(answer, "Joe leads you to his house, where a smaller duck awaits, sitting in an armchair.", "You walk away from Joe in disgust. 'You've made an enemy today, " + formalname + "! I'm not happy!' He says.");
+        System.out.println("You are in a town. A gigantic duck, twice your size, with a sword walks up to you. He says, 'my name's Gary. Like to come to my house and meet my daughter?\nShe's considered a beauty among giant ducks.'");
+        System.out.println("Would you like to meet Gary's daughter? Answer yes or no.");
+        String gary = consoleInput.next();
+        yesno(gary, "Gary leads you to his house, where a smaller duck awaits, sitting in an armchair.", "You walk away from Gary in disgust. 'You've made an enemy today, " + formalname + "! I'm not happy!' He says.\n'How do you know my name, Joe?' You ask.\n'I know many things about you. Including your credit card number.'\n He throws his head back and laughs.");
+        if(gary == "yes" || answer == "Yes"){
+            System.out.println("She is clearly a female duck, and she invites you up to her room.\n'Why hello, " + formalname + ". I've heard so much about you. Is it true your credit card number is " + credit + "? How interesting.\n\nJoe's daughter is obviously creepy. Would you like to run away?");
+            answer = consoleInput.next();
+            yesno(answer, "You ran away from the house and you you hear a scream of rage. 'You'll pay for this!' Gary yells.", "You stay at the house, and Gary's daughter, who introduces herself as Gertie, invites you down to the kitchen.");
+            if(answer.equals("yes") || answer.equals("Yes")){
+                System.out.println((char)27 + "[31;0mAn unauthorized source (called Gary) would like to use your credit card. Would you like to allow this transaction?");
+                System.out.println((char)27 + "Great! you have authorized this payment of $10,000.[0;0m");
+                cash -= 10000;
+                System.out.println("Your cash on hand is " + cash + ".");
+            }else{
+                //This is where user gets eaten and has to pay to save themselves
+            }
+        }
+        //Continue here from Gary's daughter or skip it
     }
 }
