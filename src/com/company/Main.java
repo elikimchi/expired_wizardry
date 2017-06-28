@@ -10,6 +10,5 @@ public class Main {
         String name = consoleInput.next();
         System.out.println("Now, how old are you? (In years, you dumbbell)");
         int age = consoleInput.nextInt();
-
     }
 }
