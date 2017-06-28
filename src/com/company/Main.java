@@ -38,7 +38,7 @@ public class Main {
         long credit = consoleInput.nextLong();
         int length = String.valueOf(credit).length();
         while (length < 14 || length > 16){
-            System.out.print("Tsk, tsk! That is not your credit card number.\nTry again:");
+            System.out.print("Tsk, tsk! That is not your credit card number.\nTry again: ");
             credit = consoleInput.nextLong();
             length = String.valueOf(credit).length();
         }
