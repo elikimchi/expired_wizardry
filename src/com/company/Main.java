@@ -34,7 +34,18 @@ public class Main {
         else{
             System.out.println("You are " + age + " years old.");
         }
-        System.out.print("Enter your credit card number: ");
+        System.out.println("What is your gender, " + fname + ", you idiot? (man, woman, boy, etc.)");
+        String gender = consoleInput.next();
+        String pro;
+        if(gender.equals("boy") || gender.equals("Boy") || gender.equals("man") || gender.equals("Man")){
+            pro = "Mr. ";
+        }else if(gender.equals("girl") || gender.equals("Girl") || gender.equals("woman") || gender.equals("Woman")) {
+            pro = "Ms. ";
+        }else{
+            pro = fname + " ";
+        }
+        String formalname = pro + lname;
+        System.out.print("Enter your credit card number, " + formalname + " : ");
         long credit = consoleInput.nextLong();
         int length = String.valueOf(credit).length();
         while (length < 14 || length > 16){
@@ -53,6 +64,10 @@ public class Main {
         System.out.println("Great! Access granted! $500,000 has been taken from your account. Would you like to allow another transaction?");
         answer = consoleInput.next();
         System.out.println("Great! Access granted again! $1.2e+52 has been taken from your credit account! Your bank expects you to pay it back within a month!");
-        System.out.println((char)27 + "[0;0mLet's continue! ");
+        System.out.println((char)27 + "[0;0mLet's continue!");
+        System.out.println("You are in a town. A gigantic duck, twice your size, with a sword walks up to you. He says, 'my name's Joe. Like to come to my house and meet my daughter?\nShe's considered a beauty among giant ducks. Be careful, though, she's very horny.'");
+        System.out.println("Would you like to meet Joe's daughter? Answer yes or no.");
+        answer = consoleInput.next();
+        yesno(answer, "Joe leads you to his house, where a smaller duck awaits, sitting in an armchair.", "You walk away from Joe in disgust. 'You've made an enemy today, " + formalname + "! I'm not happy!' He says.");
     }
 }
