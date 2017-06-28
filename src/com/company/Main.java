@@ -21,7 +21,7 @@ public class Main {
         String fname = parts[0];
         String lname = parts[1];
         System.out.println("Hello " + fname);
-        System.out.print("Enter your age (in years):");
+        System.out.print("Enter your age (in years): ");
         float age = consoleInput.nextFloat();
         if(age > 130){
             System.out.println("Are you sure?");
@@ -43,5 +43,16 @@ public class Main {
             length = String.valueOf(credit).length();
         }
         System.out.println("Correct! Let's begin!");
+        try {
+            Thread.sleep(2000);
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println((char)27 + "[31;0mAn unauthorized source would like to use your credit card. Would you like to allow this transaction?");
+        answer = consoleInput.next();
+        System.out.println("Great! Access granted! $500,000 has been taken from your account. Would you like to allow another transaction?");
+        answer = consoleInput.next();
+        System.out.println("Great! Access granted again! $1.2e+52 has been taken from your credit account! Your bank expects you to pay it back within a month!");
+        System.out.println((char)27 + "[0;0mLet's continue! ");
     }
 }
