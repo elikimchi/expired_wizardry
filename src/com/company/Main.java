@@ -107,9 +107,9 @@ public class Main {
         }
         */
         if(gary.equals("Yes") || gary.equals("Yes")){
-
+            System.out.println("You have bribed Gary and he is very happy with you. You have an ally (though a dough-loving one)");
         }else{
-
+            System.out.println("You have decided not to visit Gary's daughter and he is very disappointed. You lost money. Let us continue on our quest.");
         }
     }
 }
