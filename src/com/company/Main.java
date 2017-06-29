@@ -93,6 +93,7 @@ public class Main {
                     System.out.println((char)27 + "Great! you have authorized this payment of $10,000.");
                     cash -= 10000;
                     System.out.println((char)27 + "[0;0mYour cash on hand is " + cash + ".");
+                    main(args);
                 }
             }
         }
