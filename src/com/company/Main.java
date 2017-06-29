@@ -70,9 +70,9 @@ public class Main {
         System.out.println("You are in a town. A gigantic duck, twice your size, with a sword walks up to you. He says, 'my name's Gary. Like to come to my house and meet my daughter?\nShe's considered a beauty among giant ducks.'");
         System.out.println("Would you like to meet Gary's daughter? Answer yes or no.");
         String gary = consoleInput.next();
-        yesno(gary, "Gary leads you to his house, where a smaller duck awaits, sitting in an armchair.", "You walk away from Gary. 'You've made an enemy today, " + formalname + "! I'm not happy!' He says.\n'How do you know my name, Joe?' You ask.\n'I know many things about you. Including your credit card number.'\n He throws his head back and laughs.");
+        yesno(gary, "Gary leads you to his house, where a smaller duck awaits, sitting in an armchair.", "You walk away from Gary. 'You've made an enemy today, " + formalname + "! I'm not happy!' He says.\n'How do you know my name, Gary?' You ask.\n'I know many things about you. Including your credit card number.'\n He throws his head back and laughs.");
         if(gary.equals("yes") || gary.equals("Yes")){
-            System.out.println("She is clearly a female duck, and she invites you up to her room.\n'Why hello, " + formalname + ". I've heard so much about you. Is it true your credit card number is " + credit + "? How interesting.\n\nJoe's daughter is obviously creepy. Would you like to run away?");
+            System.out.println("She is clearly a female duck, and she invites you up to her room.\n'Why hello, " + formalname + ". I've heard so much about you. Is it true your credit card number is " + credit + "? How interesting.\n\nGary's daughter is obviously creepy. Would you like to run away?");
             answer = consoleInput.next();
             yesno(answer, "You run away from the house and hear a scream of rage. 'You'll PAY for this!' Gary yells.", "You stay at the house, and Gary's daughter, who introduces herself as Gertie, invites you down to the kitchen.");
             if(answer.equals("yes") || answer.equals("Yes")){
