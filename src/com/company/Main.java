@@ -82,7 +82,7 @@ public class Main {
                 cash -= 10000;
                 System.out.println((char)27 + "[0;0mYour cash on hand is " + cash + ".");
             }else{
-                System.out.println("You have decided to stay.\n'Let me show you the kitchen! We'll be eating soon. I'm so excited to eat y- that is, with you,' she says\nYou go down to the kitchen and she shows you around. Suddenly she grabs you and slams you down on a giant cutting board. She quickly chops your head off.\nThe duck family eats you, leaving only your heart and brain. Gary says, 'If you give me the pin code of your credit card, I'll resurrect you.' \n\n Would you like to give Gary your pin code?");
+                System.out.println("You have decided to stay.\n'Let me show you the kitchen! We'll be eating soon. I'm so excited to eat y- that is, with you,' she says\nYou go down to the kitchen and she shows you around. Suddenly she grabs you and slams you down on a giant cutting board. She quickly chops your head off.\nThe duck family eats you, leaving only your heart and brain. Gary says, 'If you give me the pin code of your credit card, I'll resurrect you.'\n\nWould you like to give Gary your pin code?");
                 answer = consoleInput.next();
                 yesno(answer, "You give Gary your pin code and he resurrects you. 'GET OUT!' He shouts.", "You lose the game.");
                 if(answer.equals("no") || answer.equals("No") || answer.equals("NO")){
@@ -91,6 +91,8 @@ public class Main {
                     System.out.println((char)27 + "[31;0mAn unauthorized duck (called Gary) would like to use your credit card. Would you like to allow this transaction?");
                     answer = consoleInput.next();
                     System.out.println((char)27 + "Great! you have authorized this payment of $10,000.");
+                    cash -= 10000;
+                    System.out.println((char)27 + "[0;0mYour cash on hand is " + cash + ".");
                 }
             }
         }
