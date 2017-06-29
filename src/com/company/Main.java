@@ -96,6 +96,15 @@ public class Main {
                 }
             }
         }
-        //Continue here from Gary's daughter or skip it
+        /*
+        Continue here from Gary's daughter or skip it - remember, later on use
+        if(gary.equals("yes") || gary.equals("Yes")){
+            System.out.println((char)27 + "[31;0mAn unauthorized source (called Gary) would like to use your credit card. Would you like to allow this transaction?");
+            answer = consoleInput.next();
+            System.out.println((char)27 + "Great! you have authorized this payment of $10,000.");
+            cash -= 5000;
+            System.out.println((char)27 + "[0;0mYour cash on hand is " + cash + ".");
+        }
+        */
     }
 }
