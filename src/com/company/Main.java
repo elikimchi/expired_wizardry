@@ -2,7 +2,7 @@ package com.company;
 
         import java.util.Scanner;
 
-/*public class Main {
+public class Main {
     public static void yesno(String yn, String yes, String no){
         if(yn.equals("yes") || yn.equals("Yes")){
             System.out.println(yes);
@@ -105,6 +105,7 @@ package com.company;
             System.out.println("You have decided not to visit Gary's daughter and he is very disappointed. You lost money. Let us continue on our quest.");
         }
         //continue
+
     }
+
 }
-*/
