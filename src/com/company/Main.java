@@ -106,5 +106,10 @@ public class Main {
             System.out.println((char)27 + "[0;0mYour cash on hand is " + cash + ".");
         }
         */
+        if(gary.equals("Yes") || gary.equals("Yes")){
+
+        }else{
+
+        }
     }
 }
