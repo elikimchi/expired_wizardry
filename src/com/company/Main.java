@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.Scanner;
+        import java.util.Scanner;
 
 public class Main {
     public static void yesno(String yn, String yes, String no){
@@ -55,7 +55,7 @@ public class Main {
             length = String.valueOf(credit).length();
         }
         System.out.print("Correct! Let's begin!");
-        System.out.println(" Your cash on hand is " + cash + ".");
+        System.out.println(" Your cash on hand is 8,600,000.");
         try {
             Thread.sleep(2000);
         } catch(InterruptedException ex) {
@@ -65,7 +65,7 @@ public class Main {
         answer = consoleInput.next();
         System.out.println("Great! Access granted! $500,000 has been taken from your account. Would you like to allow another transaction?");
         answer = consoleInput.next();
-        System.out.println("Great! Access granted again! $1.2e+52 has been taken from your credit account! Your bank expects you to pay it back within a month!");
+        System.out.println("Great! Access granted again! $8,000,000 has been taken from your credit account! Your bank expects you to pay it back within a month!");
         System.out.println((char)27 + "[0;0mLet's continue!");
         System.out.println("You are in a town. A gigantic duck, twice your size, with a sword walks up to you. He says, 'my name's Gary. Like to come to my house and meet my daughter?\nShe's considered a beauty among giant ducks.'");
         System.out.println("Would you like to meet Gary's daughter? Answer yes or no.");
