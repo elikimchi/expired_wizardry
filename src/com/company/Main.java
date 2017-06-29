@@ -2,7 +2,7 @@ package com.company;
 
         import java.util.Scanner;
 
-public class Main {
+/*public class Main {
     public static void yesno(String yn, String yes, String no){
         if(yn.equals("yes") || yn.equals("Yes")){
             System.out.println(yes);
@@ -107,3 +107,4 @@ public class Main {
         //continue
     }
 }
+*/
