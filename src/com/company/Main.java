@@ -88,7 +88,7 @@ public class Main {
                 if(answer.equals("no") || answer.equals("No") || answer.equals("NO")){
                     System.exit(0);
                 }else{
-                    System.out.println((char)27 + "[31;0mAn unauthorized duck (called Gary) would like to use your credit card. Would you like to allow this transaction?");
+                    System.out.println((char)27 + "[31;0mAn unauthorized duck would like to use your credit card. Would you like to allow this transaction?");
                     answer = consoleInput.next();
                     System.out.println((char)27 + "Great! you have authorized this payment of $10,000.");
                     cash -= 10000;
@@ -97,20 +97,13 @@ public class Main {
                 }
             }
         }
-        /*
-        Continue here from Gary's daughter or skip it - remember, later on use
         if(gary.equals("yes") || gary.equals("Yes")){
-            System.out.println((char)27 + "[31;0mAn unauthorized source (called Gary) would like to use your credit card. Would you like to allow this transaction?");
-            answer = consoleInput.next();
-            System.out.println((char)27 + "Great! you have authorized this payment of $10,000.");
-            cash -= 5000;
-            System.out.println((char)27 + "[0;0mYour cash on hand is " + cash + ".");
-        }
-        */
-        if(gary.equals("Yes") || gary.equals("Yes")){
             System.out.println("You have bribed Gary and he is very happy with you. You have an ally (though a dough-loving one)");
+        }else if (gary.equals("no") || gary.equals("No")) {
+            System.out.println("You ran away from Gary's daughter and he is extremely angry. You lost money. Let us continue our quest.");
         }else{
             System.out.println("You have decided not to visit Gary's daughter and he is very disappointed. You lost money. Let us continue on our quest.");
         }
+        //continue
     }
 }
