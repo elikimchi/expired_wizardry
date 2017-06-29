@@ -81,7 +81,7 @@ public class Main {
                 cash -= 10000;
                 System.out.println("Your cash on hand is " + cash + ".");
             }else{
-                //This is where user gets eaten and has to pay to save themselves
+                System.out.println("You have decided to stay.\n'Let me show you the kitchen! We'll be eating soon. I'm so excited to eat y- that is, with you,' she says\nYou go down to the kitchen and she shows you around. Suddenly she grabs you and slams you down on a giant cutting board. She quickly chops your head off.\nThe duck family eats you, leaving only your heart and brain. Gary says, 'If you give me the pin code of your credit card, I'll resurrect you. '");
             }
         }
         //Continue here from Gary's daughter or skip it
