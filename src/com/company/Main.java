@@ -71,17 +71,27 @@ public class Main {
         System.out.println("Would you like to meet Gary's daughter? Answer yes or no.");
         String gary = consoleInput.next();
         yesno(gary, "Gary leads you to his house, where a smaller duck awaits, sitting in an armchair.", "You walk away from Gary in disgust. 'You've made an enemy today, " + formalname + "! I'm not happy!' He says.\n'How do you know my name, Joe?' You ask.\n'I know many things about you. Including your credit card number.'\n He throws his head back and laughs.");
-        if(gary == "yes" || answer == "Yes"){
+        if(gary.equals("yes") || gary.equals("Yes")){
             System.out.println("She is clearly a female duck, and she invites you up to her room.\n'Why hello, " + formalname + ". I've heard so much about you. Is it true your credit card number is " + credit + "? How interesting.\n\nJoe's daughter is obviously creepy. Would you like to run away?");
             answer = consoleInput.next();
-            yesno(answer, "You ran away from the house and you you hear a scream of rage. 'You'll pay for this!' Gary yells.", "You stay at the house, and Gary's daughter, who introduces herself as Gertie, invites you down to the kitchen.");
+            yesno(answer, "You run away from the house and hear a scream of rage. 'You'll PAY for this!' Gary yells.", "You stay at the house, and Gary's daughter, who introduces herself as Gertie, invites you down to the kitchen.");
             if(answer.equals("yes") || answer.equals("Yes")){
                 System.out.println((char)27 + "[31;0mAn unauthorized source (called Gary) would like to use your credit card. Would you like to allow this transaction?");
-                System.out.println((char)27 + "Great! you have authorized this payment of $10,000.[0;0m");
+                answer = consoleInput.next();
+                System.out.println((char)27 + "Great! you have authorized this payment of $10,000.");
                 cash -= 10000;
-                System.out.println("Your cash on hand is " + cash + ".");
+                System.out.println((char)27 + "[0;0mYour cash on hand is " + cash + ".");
             }else{
-                System.out.println("You have decided to stay.\n'Let me show you the kitchen! We'll be eating soon. I'm so excited to eat y- that is, with you,' she says\nYou go down to the kitchen and she shows you around. Suddenly she grabs you and slams you down on a giant cutting board. She quickly chops your head off.\nThe duck family eats you, leaving only your heart and brain. Gary says, 'If you give me the pin code of your credit card, I'll resurrect you. '");
+                System.out.println("You have decided to stay.\n'Let me show you the kitchen! We'll be eating soon. I'm so excited to eat y- that is, with you,' she says\nYou go down to the kitchen and she shows you around. Suddenly she grabs you and slams you down on a giant cutting board. She quickly chops your head off.\nThe duck family eats you, leaving only your heart and brain. Gary says, 'If you give me the pin code of your credit card, I'll resurrect you.' \n\n Would you like to give Gary your pin code?");
+                answer = consoleInput.next();
+                yesno(answer, "You give Gary your pin code and he resurrects you. 'GET OUT!' He shouts.", "You lose the game.");
+                if(answer.equals("no") || answer.equals("No") || answer.equals("NO")){
+                    System.exit(0);
+                }else{
+                    System.out.println((char)27 + "[31;0mAn unauthorized duck (called Gary) would like to use your credit card. Would you like to allow this transaction?");
+                    answer = consoleInput.next();
+                    System.out.println((char)27 + "Great! you have authorized this payment of $10,000.");
+                }
             }
         }
         //Continue here from Gary's daughter or skip it
