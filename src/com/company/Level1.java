@@ -7,7 +7,7 @@ import edu.digipen.level.GameLevel;
 public class Level1 extends GameLevel {
     @Override
     public void create() {
-        GameObject obj1 = new GameObject("Object1", 256, 64, "Paddle.png");
+        GameObject obj1 = new Paddle();
         ObjectManager.addGameObject(obj1);
     }
 
@@ -18,6 +18,7 @@ public class Level1 extends GameLevel {
 
     @Override
     public void update(float v) {
+
 
     }
 
