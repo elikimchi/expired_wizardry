@@ -7,8 +7,11 @@ import edu.digipen.level.GameLevel;
 public class Level1 extends GameLevel {
     @Override
     public void create() {
-        GameObject obj1 = new Paddle();
-        ObjectManager.addGameObject(obj1);
+        GameObject player = new Paddle();
+        ObjectManager.addGameObject(player);
+
+        GameObject enemy = new Enemy();
+        ObjectManager.addGameObject(enemy);
     }
 
     @Override
