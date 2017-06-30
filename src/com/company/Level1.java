@@ -1,3 +1,5 @@
+package com.company;
+
 import edu.digipen.level.GameLevel;
 
 public class Level1 extends GameLevel {
