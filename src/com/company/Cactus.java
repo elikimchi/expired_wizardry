@@ -3,16 +3,22 @@ package com.company;
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.gameobject.ObjectManager;
 import edu.digipen.math.Vec2;
+import java.util.Random;
 
 public class Cactus extends GameObject{
     float x;
+    Random rand = new Random();
+    int  n = rand.nextInt(10000) + 200;
+
     public Cactus() {
         super("Cactus", 75, 75, "Paddle.png");
-        setPosition(200, 0);
-        x = 200;
+        System.out.println(n);
+        setRectangleCollider(25, 25);
+        setPosition(n, 0);
+        x = n;
     }
 
-    @Override
+        @Override
     public void update(float dt) {
         --x;
         setPositionX(x);

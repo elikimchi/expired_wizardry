@@ -4,6 +4,7 @@ import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.math.Vec2;
 
+import javax.swing.*;
 import java.awt.event.KeyEvent;
 
 /**
@@ -17,6 +18,9 @@ public class Paddle extends GameObject {
     }
     public float movementSpeed = 6.0f;
     public float rotationSpeed = 3.0f;
+
+
+
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
@@ -63,6 +67,7 @@ public class Paddle extends GameObject {
             movement.scale(movementSpeed * (dt * 35));
             position.add(movement);
             setPosition(position);
+
             }
     }
 }
