@@ -17,7 +17,7 @@ public class Dinosaur extends GameObject{
     int i;
 
     public Dinosaur() {
-        super("Player", 50, 50, "RectangleAnimation.png", 8, 3, 2, 0.1f);
+        super("Player", 61, 47, "dinospritesheet.png", 6, 1, 6, 0.7f);
         setRectangleCollider(22, 23);
         ystart = getPositionY();
         y = getPositionY();
@@ -38,6 +38,9 @@ public class Dinosaur extends GameObject{
     @Override
     public void update(float dt)
     {
+
+        animationData.goToAndStop(5);
+
         if ( up == 1 && y < yjump){
             y += 2;
             setPositionY(y);
