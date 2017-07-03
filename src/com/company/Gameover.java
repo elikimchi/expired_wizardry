@@ -8,6 +8,6 @@ import javax.swing.*;
 public class Gameover {
     public static JLabel message = new JLabel("Default Message");
     public Gameover(){
-        super()
+        super();
     }
 }

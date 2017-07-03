@@ -20,8 +20,8 @@ public class Dinosaur extends GameObject{
     public static JLabel message = new JLabel("Default Message");
 
     public Dinosaur() {
-        super("Player", 64, 64, "Paddle.png");
-        setRectangleCollider(20, 23);
+        super("Player", 50, 50, "inertdinosaur.png");
+        setRectangleCollider(22, 23);
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
