@@ -13,9 +13,18 @@ public class Paddle extends GameObject {
     public Vec2 direction = new Vec2(1.0f,0.0f);
     public Paddle() {
         super("Player", 256, 64, "Paddle.png");
+        setRectangleCollider(20,20);
     }
     public float movementSpeed = 6.0f;
     public float rotationSpeed = 3.0f;
+
+    @Override
+    public void collisionReaction(GameObject collidedWith) {
+        //Reset the object's position to 0 , 0
+        setPosition(0,0);
+        // Change the color to red with 0.5 as opacity
+    }
+
     @Override
     public void update(float dt)
     {
