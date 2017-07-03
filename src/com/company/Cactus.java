@@ -12,6 +12,7 @@ public class Cactus extends GameObject{
 
     public Cactus() {
         super("Cactus", 50, 50, "1cactus.png");
+       // super()
         System.out.println(n);
         setRectangleCollider(25, 25);
         setPosition(n, 0);
@@ -20,7 +21,7 @@ public class Cactus extends GameObject{
 
         @Override
     public void update(float dt) {
-        --x;
+        x -= 2;
         setPositionX(x);
     }
 }
