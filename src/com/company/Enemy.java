@@ -1,13 +1,14 @@
 package com.company;
 
-        import edu.digipen.gameobject.GameObject;
-        import edu.digipen.gameobject.ObjectManager;
-        import edu.digipen.math.Vec2;
+import edu.digipen.gameobject.GameObject;
+import edu.digipen.gameobject.ObjectManager;
+import edu.digipen.math.Vec2;
 
 public class Enemy extends GameObject {
 
     public Enemy() {
         super("Enemy", 75, 75, "Ball.png");
+        setCircleCollider(26);
         setPosition(200, 200);
     }
 
