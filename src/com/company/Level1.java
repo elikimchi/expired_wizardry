@@ -11,13 +11,11 @@ public class Level1 extends GameLevel {
     public void create() {
         Graphics.setDrawCollisionData(true);
 
-        Graphics.setBackgroundColor(247, 247, 247);
+       Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
 
         GameObject player = new Dinosaur();
         ObjectManager.addGameObject(player);
 
-        //GameObject enemy = new Enemy();
-        //ObjectManager.addGameObject(enemy);
         for (int i = 0; i < 10; i++) {
             GameObject cactus = new Cactus();
             ObjectManager.addGameObject(cactus);

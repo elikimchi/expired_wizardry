@@ -9,32 +9,31 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-/**
- * Created by jack.notarangelo on 6/30/2017.
- */
 public class Dinosaur extends GameObject{
     float ystart;
     float y;
     float up;
     float yjump;
-    public static JLabel message = new JLabel("Default Message");
+    int i;
 
     public Dinosaur() {
-        super("Player", 50, 50, "1pterodactyl.png");
+        super("Player", 50, 50, "inertdinosaur.png");
         setRectangleCollider(22, 23);
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
-        yjump = getPositionY() + 100;
+        yjump = getPositionY() + 150;
+
+        i = 0;
     }
     public float movementSpeed = 6.0f;
     public float rotationSpeed = 3.0f;
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
-
-        setPosition(0,0);
-    }
+        while(i == 0){
+            }
+        }
 
     @Override
     public void update(float dt)
@@ -60,9 +59,10 @@ public class Dinosaur extends GameObject{
 
         }
         if(InputManager.isPressed(KeyEvent.VK_DOWN)) {
-            setModulationColor(1.0f, 1.0f, 1.0f, 1.0f);
-            message.setText("X wins");
-           // message.text
+            setRectangleCollider(30, 15);
+        }
+        else{
+            setRectangleCollider(22, 23);
         }
     }
 }
