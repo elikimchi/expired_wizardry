@@ -32,7 +32,6 @@ public class Dinosaur extends GameObject{
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
-        //Reset the object's position to 0 , 0
 
         setPosition(0,0);
     }
