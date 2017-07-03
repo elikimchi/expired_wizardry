@@ -1,9 +1,12 @@
 package com.company;
 
+import edu.digipen.Game;
 import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.math.Vec2;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 
 /**
@@ -14,10 +17,11 @@ public class Dinosaur extends GameObject{
     float y;
     float up;
     float yjump;
+    public static JLabel message = new JLabel("Default Message");
 
     public Dinosaur() {
         super("Player", 64, 64, "Paddle.png");
-        setRectangleCollider(28, 28);
+        setRectangleCollider(20, 23);
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
@@ -28,9 +32,8 @@ public class Dinosaur extends GameObject{
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
-        //Reset the object's position to 0 , 0
+
         setPosition(0,0);
-        // Change the color to red with 0.5 as opacity
     }
 
     @Override
@@ -57,7 +60,9 @@ public class Dinosaur extends GameObject{
 
         }
         if(InputManager.isPressed(KeyEvent.VK_DOWN)) {
-
+            setModulationColor(1.0f, 1.0f, 1.0f, 1.0f);
+            message.setText("X wins");
+           // message.text
         }
     }
 }
