@@ -15,6 +15,7 @@ public class Dinosaur extends GameObject{
     float up;
     float yjump;
     int i;
+    boolean run;
 
     public Dinosaur() {
         super("Player", 61, 47, "dinospritesheet.png", 6, 1, 6, 0.7f);
@@ -23,6 +24,7 @@ public class Dinosaur extends GameObject{
         y = getPositionY();
         up = 0;
         yjump = getPositionY() + 150;
+        run = true;
 
         i = 0;
     }
@@ -38,8 +40,16 @@ public class Dinosaur extends GameObject{
     @Override
     public void update(float dt)
     {
+        if(run){
+            animationData.goToAndStop(0);
+            run = false;
+        }
+        else if(!run){
+            animationData.goToAndStop(1);
+            run = true;
+        }
 
-        animationData.goToAndStop(5);
+
 
         if ( up == 1 && y < yjump){
             y += 2;
@@ -63,9 +73,21 @@ public class Dinosaur extends GameObject{
         }
         if(InputManager.isPressed(KeyEvent.VK_DOWN)) {
             setRectangleCollider(30, 15);
+            if(run){
+                animationData.goToAndStop(4);
+                run = false;
+            }
+            else if(!run){
+                animationData.goToAndStop(5);
+                run = true;
+            }
+
+            y -= 4;
+            setPositionY(y);
+            up = 2;
         }
         else{
-            setRectangleCollider(22, 2);
+            setRectangleCollider(22, 23);
         }
     }
 }
