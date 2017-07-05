@@ -6,8 +6,6 @@ import edu.digipen.gameobject.ObjectManager;
 import edu.digipen.graphics.Graphics;
 import edu.digipen.level.GameLevel;
 
-import java.awt.*;
-
 
 public class Level1 extends GameLevel {
     @Override
@@ -27,6 +25,11 @@ public class Level1 extends GameLevel {
 
         GameObject ground = new Ground();
         ObjectManager.addGameObject(ground);
+        ground.setPosition(0, -30);
+
+        GameObject ground2 = new Ground();
+        ObjectManager.addGameObject(ground2);
+        ground2.setPosition(1096, -30);
     }
 
 

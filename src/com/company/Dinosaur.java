@@ -27,7 +27,8 @@ public class Dinosaur extends GameObject{
 
     public Dinosaur() {
         super("Player", 61, 47, "dinospritesheet.png", 6, 1, 6, 0.7f);
-        setRectangleCollider(20, 23);
+        setPosition(0,-5);
+        setRectangleCollider(18, 23);
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
