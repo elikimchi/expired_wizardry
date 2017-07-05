@@ -6,11 +6,13 @@ import edu.digipen.gameobject.ObjectManager;
 import edu.digipen.graphics.Graphics;
 import edu.digipen.level.GameLevel;
 
+import java.awt.*;
 
 
 public class Level1 extends GameLevel {
     @Override
     public void create() {
+
         Graphics.setDrawCollisionData(true);
 
         Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
@@ -22,6 +24,9 @@ public class Level1 extends GameLevel {
             GameObject cactus = new Cactus();
             ObjectManager.addGameObject(cactus);
         }
+
+        GameObject ground = new Ground();
+        ObjectManager.addGameObject(ground);
     }
 
 
