@@ -20,7 +20,7 @@ public class Cactus extends GameObject{
         type = rand.nextInt(4);
 //        goToAndStop();
         // animationData.goToAndPlay(type);
-        type = 2;
+        type = 3;
         animationData.goToFrame(type);
 
         if (type == 0){
