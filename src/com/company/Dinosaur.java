@@ -27,12 +27,12 @@ public class Dinosaur extends GameObject{
 
     public Dinosaur() {
         super("Player", 61, 47, "dinospritesheet.png", 6, 1, 6, 0.7f);
-        setPosition(0,-5);
+        setPosition(-250,-5);
         setRectangleCollider(18, 23);
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
-        yjump = getPositionY() + 150;
+        yjump = getPositionY() + 129;
         run = 0;
 
         i = 0;
@@ -95,14 +95,14 @@ public class Dinosaur extends GameObject{
 
 
         if ( up == 1 && y < yjump){
-            y += 2;
+            y += 3;
             setPositionY(y);
         }
         else if(up == 1 && y == yjump){
             up = 2;
         }
         else if(up == 2 && y > ystart){
-            y -= 2;
+            y -= 3;
             setPositionY(y);
         }
         else if(up == 1 && y == ystart){
@@ -112,7 +112,7 @@ public class Dinosaur extends GameObject{
         }
         else if(InputManager.isPressed(KeyEvent.VK_UP) || InputManager.isPressed(KeyEvent.VK_SPACE)) {
             up = 1;
-            y += 2;
+            y += 3;
             setPositionY(y);
             animationData.goToAndStop(2);
             run = 2;
@@ -140,7 +140,7 @@ public class Dinosaur extends GameObject{
             setPositionY(y);
         }
         else{
-            setRectangleCollider(20, 23);
+            setRectangleCollider(18, 23);
         }
     }
 }

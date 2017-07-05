@@ -19,9 +19,9 @@ public class Ground extends GameObject {
     @Override
     public void update(float dt) {
         x = getPositionX();
-        x -= 2;
-        if (x < -1095){
-            x = 1096;
+        x -= 3;
+        if (x < -1086){
+            x = 1088;
         }
         setPositionX(x);
     }

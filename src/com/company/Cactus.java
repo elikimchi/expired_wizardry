@@ -32,8 +32,8 @@ public class Cactus extends GameObject{
             setPositionY(-5); // done
         }
         else if (type == 2){
-            setRectangleCollider(25, 25);
-            setPositionY(-15);
+            setRectangleCollider(25, 20);
+            setPositionY(-10);
         }
         else if (type == 3){
             setRectangleCollider(25, 25);
@@ -43,7 +43,7 @@ public class Cactus extends GameObject{
 
         @Override
     public void update(float dt) {
-        x -= 2;
+        x -= 3;
         setPositionX(x);
     }
 }

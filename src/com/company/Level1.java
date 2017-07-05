@@ -21,6 +21,7 @@ public class Level1 extends GameLevel {
         for (int i = 0; i < 10; i++) {
             GameObject cactus = new Cactus();
             ObjectManager.addGameObject(cactus);
+
         }
 
         GameObject ground = new Ground();
@@ -29,7 +30,7 @@ public class Level1 extends GameLevel {
 
         GameObject ground2 = new Ground();
         ObjectManager.addGameObject(ground2);
-        ground2.setPosition(1096, -30);
+        ground2.setPosition(1088, -30);
     }
 
 
