@@ -15,7 +15,7 @@ public class Dinosaur extends GameObject{
     float up;
     float yjump;
     int i;
-    boolean run;
+    int run;
 
     public Dinosaur() {
         super("Player", 61, 47, "dinospritesheet.png", 6, 1, 6, 0.7f);
@@ -24,7 +24,9 @@ public class Dinosaur extends GameObject{
         y = getPositionY();
         up = 0;
         yjump = getPositionY() + 150;
-        run = true;
+        run = 0;
+
+        animationData.frameLifetime = 10;
 
         i = 0;
     }
@@ -33,6 +35,7 @@ public class Dinosaur extends GameObject{
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
+        animationData.goToAndStop(3);
         while(i == 0){
             }
         }
@@ -40,13 +43,14 @@ public class Dinosaur extends GameObject{
     @Override
     public void update(float dt)
     {
-        if(run){
-            animationData.goToAndStop(0);
-            run = false;
+
+        if(run == 0){
+            animationData.goToAndStop(run);
+            run = 1;
         }
-        else if(!run){
-            animationData.goToAndStop(1);
-            run = true;
+        else if(run == 1){
+            animationData.goToAndStop(run);
+            run = 0;
         }
 
 
@@ -64,27 +68,30 @@ public class Dinosaur extends GameObject{
         }
         else if(up == 1 && y == ystart){
             up = 0;
+            run = 0;
+
         }
         else if(InputManager.isPressed(KeyEvent.VK_UP) || InputManager.isPressed(KeyEvent.VK_SPACE)) {
             up = 1;
             y += 2;
             setPositionY(y);
+            animationData.goToAndStop(2);
+            run = 2;
 
         }
         if(InputManager.isPressed(KeyEvent.VK_DOWN)) {
             setRectangleCollider(30, 15);
-            if(run){
+            if(run == 0){
                 animationData.goToAndStop(4);
-                run = false;
+                run = 1;
             }
-            else if(!run){
+            else if(run == 1){
                 animationData.goToAndStop(5);
-                run = true;
+                run = 0;
             }
 
-            y -= 4;
+            y  = ystart;
             setPositionY(y);
-            up = 2;
         }
         else{
             setRectangleCollider(22, 23);
