@@ -11,7 +11,7 @@ public class Cactus extends GameObject{
     int  n = rand.nextInt(10000) + 200;
 
     public Cactus() {
-        super("Cactus", 50, 50, "1cactus.png");
+        super("Cactus", 61, 50, "cactusspritesheet.png", 4,1,4, 0.7f);
        // super()
         System.out.println(n);
         setRectangleCollider(25, 25);
