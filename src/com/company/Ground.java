@@ -10,7 +10,11 @@ import edu.digipen.gameobject.GameObject;
 //    int x;
 //    public Ground() {
 //        super("Ground", 100, 40, "ground.png");
-//        x = setPositionX();
+//        System.out.println(n);
+//        setRectangleCollider(25, 25);
+//        setPosition(n, 0);
+//        x = n;
+//        x = getPositionX();
 //    }
 //
 //    @Override
