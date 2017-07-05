@@ -1,0 +1,6 @@
+To Do:
+
+1st priority: get the ground duplicating.
+2: spawn cacti sprites and hitboxes randomly
+3: changing the hitbox of the dinosaur when ducking
+4: pterodactyls
