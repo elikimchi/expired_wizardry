@@ -11,7 +11,7 @@ public class Ground extends GameObject {
     public Ground() {
         super("Ground", 548, 13, "ground.png");
         //System.out.println(n);
-        setRectangleCollider(25, 25);
+        //setRectangleCollider(25, 25);
         setPosition(0, -30);
         //x = n;
         //x = getPositionX();
