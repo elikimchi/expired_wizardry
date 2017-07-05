@@ -25,16 +25,19 @@ public class Cactus extends GameObject{
 
         if (type == 0){
             setRectangleCollider(26, 25);
-            setPositionY(121);
+            setPositionY(-15);
         }
         else if (type == 1){
             setRectangleCollider(22, 25);
+            setPositionY(-5); // done
         }
         else if (type == 2){
             setRectangleCollider(25, 25);
+            setPositionY(-15);
         }
-        else if (type == 4){
+        else if (type == 3){
             setRectangleCollider(25, 25);
+            setPositionY(-15);
         }
     }
 
