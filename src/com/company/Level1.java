@@ -1,6 +1,7 @@
 package com.company;
 
 
+import com.sun.deploy.uitoolkit.Window;
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.gameobject.ObjectManager;
 import edu.digipen.graphics.Graphics;
@@ -42,8 +43,6 @@ public class Level1 extends GameLevel {
 
     @Override
     public void update(float v) {
-
-
     }
 
     @Override
