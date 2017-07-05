@@ -17,16 +17,22 @@ public class Dinosaur extends GameObject{
     int i;
     int run;
 
+    public float idleTimer;
+    public float idleFrameDelay = 0.3f;
+    public boolean idleToggle = false;
+    private boolean isJumping = false;
+
+    private float jumpDelayTimer = 0.1f;
+
+
     public Dinosaur() {
         super("Player", 61, 47, "dinospritesheet.png", 6, 1, 6, 0.7f);
-        setRectangleCollider(22, 23);
+        setRectangleCollider(20, 23);
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
         yjump = getPositionY() + 150;
         run = 0;
-
-        animationData.frameLifetime = 10;
 
         i = 0;
     }
@@ -44,15 +50,47 @@ public class Dinosaur extends GameObject{
     public void update(float dt)
     {
 
-        if(run == 0){
-            animationData.goToAndStop(run);
-            run = 1;
-        }
-        else if(run == 1){
-            animationData.goToAndStop(run);
-            run = 0;
+//        if(run == 0){
+//            animationData.goToAndStop(run);
+//            run = 1;
+//        }
+//        else if(run == 1){
+//            animationData.goToAndStop(run);
+//            run = 0;
+//        }
+        if(isJumping)
+        {
+            if(jumpDelayTimer <= 0.0f)
+            {
+                if(getPositionY() <= ystart + 3 && getPositionY() >= ystart -3)
+                {
+                    isJumping = false;
+                }
+            }
+            else
+                jumpDelayTimer -= dt;
         }
 
+
+
+        if(isJumping == false)
+        {
+            if(idleTimer <= 0.0f)
+            {
+                idleToggle = !idleToggle;
+                idleTimer = idleFrameDelay;
+            }
+            else
+                idleTimer -= dt;
+
+            if(idleToggle)
+                goToAndStop(0);
+            else
+                goToAndStop(1);
+
+            animationData.play();
+
+        }
 
 
         if ( up == 1 && y < yjump){
@@ -77,24 +115,31 @@ public class Dinosaur extends GameObject{
             setPositionY(y);
             animationData.goToAndStop(2);
             run = 2;
-
+            isJumping = true;
+            jumpDelayTimer = 0.1f;
         }
         if(InputManager.isPressed(KeyEvent.VK_DOWN)) {
             setRectangleCollider(30, 15);
-            if(run == 0){
-                animationData.goToAndStop(4);
-                run = 1;
+            if(idleTimer <= 0.0f)
+            {
+                idleToggle = !idleToggle;
+                idleTimer = idleFrameDelay;
             }
-            else if(run == 1){
-                animationData.goToAndStop(5);
-                run = 0;
-            }
+            else
+                idleTimer -= dt;
+
+            if(idleToggle)
+                goToAndStop(4);
+            else
+                goToAndStop(5);
+
+            animationData.play();
 
             y  = ystart;
             setPositionY(y);
         }
         else{
-            setRectangleCollider(22, 23);
+            setRectangleCollider(20, 23);
         }
     }
 }
