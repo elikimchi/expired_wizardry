@@ -16,10 +16,11 @@ public class Level1 extends GameLevel {
     Random rand = new Random();
     int  n;
 
+
     @Override
     public void create() {
 
-//        Graphics.setDrawCollisionData(true);
+        Graphics.setDrawCollisionData(true);
 
         Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
 
@@ -37,6 +38,7 @@ public class Level1 extends GameLevel {
         GameObject ground2 = new Ground();
         ObjectManager.addGameObject(ground2);
         ground2.setPosition(1088, -30);
+
     }
 
 
@@ -48,6 +50,7 @@ public class Level1 extends GameLevel {
 
     @Override
     public void update(float dt) {
+
         n = rand.nextInt(99) + 1;
         deadtime += dt;
         if(deadtime >= 42 * dt ){

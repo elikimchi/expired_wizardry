@@ -20,27 +20,26 @@ public class Dinosaur extends GameObject{
 
     private float jumpDelayTimer = 0.1f;
 
+    TempRun runHitBox;
+    TempDuck duckHitBox;
+
+    private boolean isDucking = false;
+
 
     public Dinosaur() {
         super("Player", 61, 47, "dinospritesheet.png", 6, 1, 6, 0.7f);
-        setPosition(-250,-5);
-        setRectangleCollider(14, 23);
+        setPosition(-250, -5);
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
         yjump = getPositionY() + 129;
         run = 0;
 
+        runHitBox = new TempRun();
+
         i = 0;
     }
 
-
-    @Override
-    public void collisionReaction(GameObject collidedWith) {
-        animationData.goToAndStop(3);
-        while(!InputManager.isPressed(KeyEvent.VK_UP) || !InputManager.isPressed(KeyEvent.VK_SPACE)){
-        }
-    }
 
     @Override
     public void update(float dt)
@@ -60,7 +59,7 @@ public class Dinosaur extends GameObject{
 
 
 
-        if(isJumping == false)
+        if(!isJumping)
         {
             if(idleTimer <= 0.0f)
             {
@@ -105,6 +104,16 @@ public class Dinosaur extends GameObject{
         }
         if(InputManager.isPressed(KeyEvent.VK_DOWN)) {
 
+
+            if(runHitBox != null && isDucking == false)
+            {
+                runHitBox.destroy();
+                duckHitBox = new TempDuck();
+                isDucking = true;
+            }
+
+
+
             if(idleTimer <= 0.0f)
             {
                 idleToggle = !idleToggle;
@@ -123,5 +132,16 @@ public class Dinosaur extends GameObject{
             y  = ystart;
             setPositionY(y);
         }
+        else
+        {
+            if(duckHitBox != null && isDucking)
+            {
+                duckHitBox.destroy();
+                runHitBox = new TempRun();
+                isDucking = false;
+            }
+        }
+
+
     }
 }
