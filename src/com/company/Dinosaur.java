@@ -132,6 +132,7 @@ public class Dinosaur extends GameObject{
             y  = ystart;
             setPositionY(y);
         }
+        
         else
         {
             if(duckHitBox != null && isDucking)

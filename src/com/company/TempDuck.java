@@ -15,7 +15,7 @@ public class TempDuck extends GameObject{
     TempDuck(){
         super("TempDuck", 1, 1, "none.png");
         setRectangleCollider(25, 15);
-        setPosition(-250, -5);
+        setPosition(-250, -9);
     }
     @Override
     public void collisionReaction(GameObject collidedWith) {
