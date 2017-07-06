@@ -25,7 +25,7 @@ public class Level1 extends GameLevel {
 
         display = new ScoreDisplay(17, 13, 290, 230);
 
-        Graphics.setDrawCollisionData(false);
+        Graphics.setDrawCollisionData(true);
 
         Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
 
@@ -57,6 +57,7 @@ public class Level1 extends GameLevel {
     public void update(float dt) {
 
         score += .15;
+        score = 500;
         display.displayNumber((int)score);
         if(score < 401) {
             n = rand.nextInt(99) + 1;
