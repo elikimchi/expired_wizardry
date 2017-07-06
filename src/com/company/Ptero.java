@@ -25,7 +25,7 @@ public class Ptero extends GameObject{
         setRectangleCollider(20, 16);
         x = 600.0f;
         if (n == 1){
-            y = -10;
+            y = -7;
         }
         else if (n == 2){
             y = 15;

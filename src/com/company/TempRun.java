@@ -23,10 +23,7 @@ public class TempRun extends GameObject{
     }
     @Override public void collisionReaction(GameObject collidedWith) {
         if(!InputManager.isPressed(KeyEvent.VK_DOWN)){
-            while(true){
-
-            }
-            //Game.destroy();
+           Game.destroy();
         }
     }
 }
