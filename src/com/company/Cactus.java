@@ -24,20 +24,20 @@ public class Cactus extends GameObject{
         animationData.goToFrame(type);
 
         if (type == 0){
-            setRectangleCollider(26, 25);
-            setPositionY(-15);
+            setRectangleCollider(24, 17);
+            setPositionY(-10);
         }
         else if (type == 1){
-            setRectangleCollider(22, 25);
-            setPositionY(-5); // done
+            setRectangleCollider(13, 23);
+            setPositionY(-3); // done
         }
         else if (type == 2){
-            setRectangleCollider(25, 20);
+            setRectangleCollider(17, 17);
             setPositionY(-10);
         }
         else if (type == 3){
-            setRectangleCollider(25, 25);
-            setPositionY(-15);
+            setRectangleCollider(9, 17);
+            setPositionY(-10);
         }
     }
 

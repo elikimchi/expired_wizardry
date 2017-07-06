@@ -1,12 +1,8 @@
 package com.company;
 
-import edu.digipen.Game;
 import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject;
-import edu.digipen.math.Vec2;
 
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Dinosaur extends GameObject{
@@ -37,28 +33,17 @@ public class Dinosaur extends GameObject{
 
         i = 0;
     }
-    public float movementSpeed = 6.0f;
-    public float rotationSpeed = 3.0f;
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
         animationData.goToAndStop(3);
-        while(i == 0){
-            }
+        while(!InputManager.isPressed(KeyEvent.VK_UP) || !InputManager.isPressed(KeyEvent.VK_SPACE)){
         }
+    }
 
     @Override
     public void update(float dt)
     {
-
-//        if(run == 0){
-//            animationData.goToAndStop(run);
-//            run = 1;
-//        }
-//        else if(run == 1){
-//            animationData.goToAndStop(run);
-//            run = 0;
-//        }
         if(isJumping)
         {
             if(jumpDelayTimer <= 0.0f)
@@ -107,7 +92,6 @@ public class Dinosaur extends GameObject{
         }
         else if(up == 1 && y == ystart){
             up = 0;
-            run = 0;
 
         }
         else if(InputManager.isPressed(KeyEvent.VK_UP) || InputManager.isPressed(KeyEvent.VK_SPACE)) {
@@ -115,7 +99,6 @@ public class Dinosaur extends GameObject{
             y += 3;
             setPositionY(y);
             animationData.goToAndStop(2);
-            run = 2;
             isJumping = true;
             jumpDelayTimer = 0.1f;
         }
