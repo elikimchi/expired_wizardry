@@ -32,7 +32,7 @@ public class Dinosaur extends GameObject{
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
-        yjump = getPositionY() + 129;
+        yjump = getPositionY() + 120;
         run = 0;
 
         runHitBox = new TempRun();
@@ -87,7 +87,7 @@ public class Dinosaur extends GameObject{
             up = 2;
         }
         else if(up == 2 && y > ystart){
-            y -= 3;
+            y -= 4;
             setPositionY(y);
         }
         else if(up == 1 && y == ystart){

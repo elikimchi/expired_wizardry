@@ -56,12 +56,12 @@ public class Level1 extends GameLevel {
     @Override
     public void update(float dt) {
 
-        score += .12;
+        score += .15;
         display.displayNumber((int)score);
         if(score < 401) {
             n = rand.nextInt(99) + 1;
             deadtime += dt;
-            if (deadtime >= 42 * dt) {
+            if (deadtime >= 35 * dt) {
                 spawncounter += dt * 10;
                 if (n <= spawncounter) {
                     deadtime = 0;
