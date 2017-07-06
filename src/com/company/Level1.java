@@ -78,7 +78,7 @@ public class Level1 extends GameLevel {
                 if (n <= spawncounter) {
                     deadtime = 0;
                     spawncounter = 0;
-                    int rano = rand.nextInt(1) + 1;
+                    int rano = rand.nextInt(2) + 1;
                     if(rano == 2){
                         GameObject ptero = new Ptero();
                         ObjectManager.addGameObject(ptero);
