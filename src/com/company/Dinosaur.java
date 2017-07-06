@@ -28,7 +28,7 @@ public class Dinosaur extends GameObject{
 
     public Dinosaur() {
         super("Player", 61, 47, "dinospritesheet.png", 6, 1, 6, 0.7f);
-        setPosition(-250, 50);
+        setPosition(-250, -5);
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
