@@ -23,7 +23,7 @@ public class Level1 extends GameLevel {
     public void create() {
 
 
-        display = new ScoreDisplay(16, 12, 300, 230);
+        display = new ScoreDisplay(17, 13, 290, 230);
 
         Graphics.setDrawCollisionData(true);
 
