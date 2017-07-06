@@ -20,7 +20,6 @@ public class Ptero extends GameObject{
 
         public Ptero() {
             super("Ptero", 51, 45, "pterospritesheet.png", 2,1,2, 0.7f);
-            // super()
             System.out.println(n);
             setRectangleCollider(25, 25);
             setPosition(n, 0);

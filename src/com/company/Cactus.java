@@ -41,7 +41,7 @@ public class Cactus extends GameObject{
 
         @Override
     public void update(float dt) {
-        x -= 3;
+        x -= 3 + Level1.score / 300;
         setPositionX(x);
     }
 }

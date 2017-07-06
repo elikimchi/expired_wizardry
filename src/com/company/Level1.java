@@ -25,7 +25,7 @@ public class Level1 extends GameLevel {
 
         display = new ScoreDisplay(17, 13, 290, 230);
 
-        Graphics.setDrawCollisionData(true);
+        Graphics.setDrawCollisionData(false);
 
         Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
 
@@ -58,16 +58,35 @@ public class Level1 extends GameLevel {
 
         score += .12;
         display.displayNumber((int)score);
-
-        n = rand.nextInt(99) + 1;
-        deadtime += dt;
-        if(deadtime >= 42 * dt ){
-            spawncounter += dt * 10;
-            if(n <= spawncounter){
-                deadtime = 0;
-                spawncounter = 0;
-                GameObject cactus = new Cactus();
-                ObjectManager.addGameObject(cactus);
+        if(score < 401) {
+            n = rand.nextInt(99) + 1;
+            deadtime += dt;
+            if (deadtime >= 42 * dt) {
+                spawncounter += dt * 10;
+                if (n <= spawncounter) {
+                    deadtime = 0;
+                    spawncounter = 0;
+                    GameObject cactus = new Cactus();
+                    ObjectManager.addGameObject(cactus);
+                }
+            }
+        } else {
+            n = rand.nextInt(99) + 1;
+            deadtime += dt;
+            if (deadtime >= 42 * dt) {
+                spawncounter += dt * 10;
+                if (n <= spawncounter) {
+                    deadtime = 0;
+                    spawncounter = 0;
+                    int rano = rand.nextInt(1) + 1;
+                    if(rano == 2){
+                        GameObject ptero = new Ptero();
+                        ObjectManager.addGameObject(ptero);
+                    } else{
+                        GameObject cactus = new Cactus();
+                        ObjectManager.addGameObject(cactus);
+                    }
+                }
             }
         }
     }
