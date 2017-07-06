@@ -6,8 +6,7 @@ import edu.digipen.math.Vec2;
 import java.util.Random;
 
 public class Cactus extends GameObject{
-    float deadtime;
-    float spawncounter;
+
     float x;
     Random rand = new Random();
     int  n = rand.nextInt(10000) + 200;
@@ -16,11 +15,11 @@ public class Cactus extends GameObject{
     public Cactus() {
         super("Cactus", 61, 50, "cactusspritesheet.png", 4, 1, 4, 0.7f);
        // super()
-        System.out.println(n);
-        setPositionX(n);
-        x = n;
+        x = 600.0f;
+        setPositionX(x);
         type = rand.nextInt(4);
         animationData.goToFrame(type);
+
 
         if (type == 0){
             setRectangleCollider(24, 17);

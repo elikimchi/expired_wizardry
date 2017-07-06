@@ -11,6 +11,11 @@ import java.util.Random;
 
 
 public class Level1 extends GameLevel {
+    float deadtime = 0;
+    float spawncounter = 0;
+    Random rand = new Random();
+    int  n;
+
     @Override
     public void create() {
 
@@ -18,14 +23,12 @@ public class Level1 extends GameLevel {
 
         Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
 
+
+
         GameObject player = new Dinosaur();
         ObjectManager.addGameObject(player);
 
-        for (int i = 0; i < 10; i++) {
-                GameObject cactus = new Cactus();
-                ObjectManager.addGameObject(cactus);
 
-        }
 
         GameObject ground = new Ground();
         ObjectManager.addGameObject(ground);
@@ -44,8 +47,18 @@ public class Level1 extends GameLevel {
     }
 
     @Override
-    public void update(float v) {
-
+    public void update(float dt) {
+        n = rand.nextInt(99) + 1;
+        deadtime += dt;
+        if(deadtime >= 42 * dt ){
+            spawncounter += dt * 10;
+            if(n <= spawncounter){
+                deadtime = 0;
+                spawncounter = 0;
+                GameObject cactus = new Cactus();
+                ObjectManager.addGameObject(cactus);
+            }
+        }
     }
 
     @Override
