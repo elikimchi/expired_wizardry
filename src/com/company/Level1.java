@@ -19,7 +19,7 @@ public class Level1 extends GameLevel {
     @Override
     public void create() {
 
-        Graphics.setDrawCollisionData(true);
+//        Graphics.setDrawCollisionData(true);
 
         Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
 

@@ -34,6 +34,7 @@ public class Dinosaur extends GameObject{
         i = 0;
     }
 
+
     @Override
     public void collisionReaction(GameObject collidedWith) {
         animationData.goToAndStop(3);
