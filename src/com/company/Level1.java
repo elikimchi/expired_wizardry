@@ -15,10 +15,15 @@ public class Level1 extends GameLevel {
     float spawncounter = 0;
     Random rand = new Random();
     int  n;
+    public static float score = 0;
 
+    ScoreDisplay display;
 
     @Override
     public void create() {
+
+
+        display = new ScoreDisplay(16, 12, 300, 230);
 
         Graphics.setDrawCollisionData(true);
 
@@ -50,6 +55,9 @@ public class Level1 extends GameLevel {
 
     @Override
     public void update(float dt) {
+
+        score += .12;
+        display.displayNumber((int)score);
 
         n = rand.nextInt(99) + 1;
         deadtime += dt;
