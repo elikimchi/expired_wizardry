@@ -24,7 +24,7 @@ public class Ptero extends GameObject{
         super("Ptero", 51, 45, "pterospritesheet.png", 2,1,2, 0.7f);
         x = 600.0f;
         if (n == 1){
-            y = -10;
+            y = -7;
         }
         else if (n == 2){
             y = 15;
