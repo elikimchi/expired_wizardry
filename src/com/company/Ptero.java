@@ -24,13 +24,13 @@ public class Ptero extends GameObject{
         super("Ptero", 51, 45, "pterospritesheet.png", 2,1,2, 0.7f);
         x = 600.0f;
         if (n == 1){
-
+            y = -10;
         }
         else if (n == 2){
-
+            y = 15;
         }
         else if(n == 3){
-
+            y = 40;
         }
         setPosition(x, y);
     }
