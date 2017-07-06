@@ -22,7 +22,7 @@ public class Ptero extends GameObject{
 
     public Ptero() {
         super("Ptero", 51, 45, "pterospritesheet.png", 2,1,2, 0.7f);
-        setRectangleCollider(20, 16);
+        setRectangleCollider(20, 14);
         x = 600.0f;
         if (n == 1){
             y = -7;
