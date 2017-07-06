@@ -14,7 +14,7 @@ import java.awt.event.KeyEvent;
 public class TempRun extends GameObject{
     public TempRun(){
         super("temprun", 1, 1, "none.png");
-        setRectangleCollider(20,20);
+        setRectangleCollider(14,22);
         setPosition(-250, -5);
     }
     @Override public void update(float dt){

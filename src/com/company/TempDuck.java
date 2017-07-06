@@ -14,7 +14,7 @@ import java.awt.event.KeyEvent;
 public class TempDuck extends GameObject{
     TempDuck(){
         super("TempDuck", 1, 1, "none.png");
-        setRectangleCollider(18, 23);
+        setRectangleCollider(25, 15);
         setPosition(-250, -5);
     }
     @Override
