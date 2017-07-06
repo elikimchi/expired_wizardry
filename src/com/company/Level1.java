@@ -7,6 +7,8 @@ import edu.digipen.gameobject.ObjectManager;
 import edu.digipen.graphics.Graphics;
 import edu.digipen.level.GameLevel;
 
+import java.util.Random;
+
 
 public class Level1 extends GameLevel {
     @Override
@@ -20,8 +22,8 @@ public class Level1 extends GameLevel {
         ObjectManager.addGameObject(player);
 
         for (int i = 0; i < 10; i++) {
-            GameObject cactus = new Cactus();
-            ObjectManager.addGameObject(cactus);
+                GameObject cactus = new Cactus();
+                ObjectManager.addGameObject(cactus);
 
         }
 
@@ -43,6 +45,7 @@ public class Level1 extends GameLevel {
 
     @Override
     public void update(float v) {
+
     }
 
     @Override

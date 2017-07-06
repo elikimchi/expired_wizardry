@@ -6,6 +6,8 @@ import edu.digipen.math.Vec2;
 import java.util.Random;
 
 public class Cactus extends GameObject{
+    float deadtime;
+    float spawncounter;
     float x;
     Random rand = new Random();
     int  n = rand.nextInt(10000) + 200;
@@ -18,9 +20,6 @@ public class Cactus extends GameObject{
         setPositionX(n);
         x = n;
         type = rand.nextInt(4);
-//        goToAndStop();
-        // animationData.goToAndPlay(type);
-        type = 3;
         animationData.goToFrame(type);
 
         if (type == 0){

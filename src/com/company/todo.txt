@@ -1,5 +1,5 @@
 To Do:
-0: make the cactis' colliders change based on what sprite they are using
+0: make the cactis' colliders change based on what sprite they are using+++
 1: make cacti spawn randomly a certain distance from each other
 2: make more cacti spawn when 10 is up
 3: make a new class called "Tempcollider" which will be the hitbox for the ducking dinosaur. Make it instantly follow the dinosaur and work when the dino ducks.
@@ -7,4 +7,5 @@ To Do:
 5: make pterodactyls and have them spawn similarly to the cacti, after the score is 500 or so. When pterodactyls begin to spawn, make sure they are not too close to cacti OR other pterodactyls and vice versa. Have them randomly choose a y-axis position from 3 options. (down on the ground; to be jumped over only, in the middle; to be jumped over or ducked under, or above, where no damage can be done unless jumped into.) Decrease the number of cacti spawning.
 6: make a text file which holds the current high score
 7: make the high score display when the game is not being played
-8: (bonus) make "hell mode" after score reaches 1500 where dino can move up and down instead of ducking and jumping and cacti and pterodactyls spawn randomly on the y-axis as well as x.
+8: make the game over sign and restart button (which can be triggered by the space or up key as well.)
+9: (bonus) make "hell mode" after score reaches 1500 where dino can move up and down instead of ducking and jumping and cacti and pterodactyls spawn randomly on the y-axis as well as x.
