@@ -14,6 +14,7 @@ import javafx.scene.input.MouseButton;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.security.Key;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -64,6 +65,8 @@ public class Level1 extends GameLevel {
 
     }
 
+    boolean upPressed = false;
+    boolean spacePressed = false;
     @Override
     public void update(float dt) {
 
@@ -73,15 +76,15 @@ public class Level1 extends GameLevel {
             ObjectManager.addGameObject(restartButton);
             GameObject gameover = new Gameover();
             ObjectManager.addGameObject(gameover);
-            if(InputManager.isMouseButtonPressed(0) || InputManager.isPressed(KeyEvent.VK_UP) || InputManager.isPressed(KeyEvent.VK_SPACE))
-            {
 
-                hasLost = false;
-                GameLevelManager.goToLevel(new Level1());
-                Level1.score = 0;
+                if (InputManager.isMouseButtonPressed(0) || (!spacePressed && InputManager.isPressed(KeyEvent.VK_SPACE)) || (!upPressed && InputManager.isPressed(KeyEvent.VK_UP))) {
+                    hasLost = false;
+                    GameLevelManager.goToLevel(new Level1());
+                    Level1.score = 0;
+                }
 
-            }
-
+            upPressed = InputManager.isPressed(KeyEvent.VK_UP);
+            spacePressed = InputManager.isPressed(KeyEvent.VK_SPACE);
             return;
         }
 
@@ -119,6 +122,9 @@ public class Level1 extends GameLevel {
                 }
             }
         }
+
+        upPressed = InputManager.isPressed(KeyEvent.VK_UP);
+        spacePressed = InputManager.isPressed(KeyEvent.VK_SPACE);
     }
 
     @Override
