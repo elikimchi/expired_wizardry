@@ -25,6 +25,8 @@ import java.util.logging.Level;
 public class Level1 extends GameLevel {
     float deadtime = 0;
     float spawncounter = 0;
+    float clouddeadtime = 0;
+    float cloudspawncounter = 0;
     Random rand = new Random();
     int  n;
     public static float score = 0;
@@ -39,7 +41,7 @@ public class Level1 extends GameLevel {
 
         display = new ScoreDisplay(17, 13, 290, 230);
 
-        Graphics.setDrawCollisionData(false);
+        Graphics.setDrawCollisionData(true);
 
         Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
 
@@ -105,7 +107,7 @@ public class Level1 extends GameLevel {
 
 
         score += .15;
-        display.displayNumber((int)score);
+        display.displayNumber((int) score);
         if(score < 401) {
             n = rand.nextInt(99) + 1;
             deadtime += dt;
@@ -135,6 +137,18 @@ public class Level1 extends GameLevel {
                         ObjectManager.addGameObject(cactus);
                     }
                 }
+            }
+        }
+
+        n = rand.nextInt(99) + 1;
+        clouddeadtime += dt;
+        if (clouddeadtime >= 75 * dt) {
+            cloudspawncounter += dt * 10;
+            if (n <= cloudspawncounter) {
+                clouddeadtime = 0;
+                cloudspawncounter = 0;
+                GameObject cloud = new Cloud();
+                ObjectManager.addGameObject(cloud);
             }
         }
 

@@ -19,8 +19,8 @@ public class TempRun extends GameObject{
 
     public TempRun(){
         super("temprun", 1, 1, "none.png");
-        setRectangleCollider(14, 22);
-        setPosition(-254, -5);
+        setRectangleCollider(14, 19);
+        setPosition(-254, -2);
     }
     @Override public void update(float dt){
         GameObject player = ObjectManager.getGameObjectByName("Player");
