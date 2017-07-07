@@ -19,7 +19,9 @@ public class Cloud extends GameObject {
     }
     @Override public void update(float dt){
         x -= 1 + Level1.score / 500;
-
+        if(x < -1000){
+            kill();
+        }
         if(!Level1.hasLost)
             setPositionX(x);
 

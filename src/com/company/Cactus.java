@@ -44,6 +44,9 @@ public class Cactus extends GameObject{
     public void update(float dt) {
             if(!Level1.hasLost)
             {
+                if(x < -1000){
+                    kill();
+                }
                 x -= 3 + Level1.score / 500;
                 setPositionX(x);
             }

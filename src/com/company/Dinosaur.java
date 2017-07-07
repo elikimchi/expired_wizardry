@@ -96,7 +96,7 @@ public class Dinosaur extends GameObject{
             up = 0;
 
         }
-        else if(InputManager.isPressed(KeyEvent.VK_UP) || InputManager.isPressed(KeyEvent.VK_SPACE)) {
+        else if(InputManager.isPressed(KeyEvent.VK_UP) || InputManager.isPressed(KeyEvent.VK_SPACE) && !Level1.hasLost) {
             up = 1;
             y += 2.5;
             setPositionY(y);

@@ -39,6 +39,9 @@ public class Ptero extends GameObject{
         @Override
         public void update(float dt) {
             x -= 3 + Level1.score / 500;
+            if(x < -1000){
+                kill();
+            }
 
             if(!Level1.hasLost)
                 setPositionX(x);
