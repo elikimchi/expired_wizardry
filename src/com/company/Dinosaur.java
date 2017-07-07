@@ -145,4 +145,8 @@ public class Dinosaur extends GameObject{
 
 
     }
+
+    @Override
+    public void collisionReaction(GameObject collidedWith) {
+    }
 }

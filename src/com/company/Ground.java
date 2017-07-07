@@ -23,6 +23,8 @@ public class Ground extends GameObject {
         if (x < -1086){
             x = 1088;
         }
-        setPositionX(x);
+
+        if(!Level1.hasLost)
+            setPositionX(x);
     }
 }

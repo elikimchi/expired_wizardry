@@ -1,13 +1,21 @@
 package com.company;
 
 
+import com.sun.corba.se.impl.orbutil.graph.Graph;
 import com.sun.deploy.uitoolkit.Window;
+import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.gameobject.ObjectManager;
 import edu.digipen.graphics.Graphics;
 import edu.digipen.level.GameLevel;
+import edu.digipen.level.GameLevelManager;
+import edu.digipen.math.Vec2;
+import javafx.scene.input.MouseButton;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.util.Random;
+import java.util.logging.Level;
 
 
 public class Level1 extends GameLevel {
@@ -16,6 +24,8 @@ public class Level1 extends GameLevel {
     Random rand = new Random();
     int  n;
     public static float score = 0;
+
+    public static boolean hasLost = false;
 
     ScoreDisplay display;
 
@@ -56,8 +66,27 @@ public class Level1 extends GameLevel {
     @Override
     public void update(float dt) {
 
+        if(hasLost)
+        {
+            RestartButton restartButton = new RestartButton();
+            ObjectManager.addGameObject(restartButton);
+            GameObject gameover = new Gameover();
+            ObjectManager.addGameObject(gameover);
+            if(InputManager.isMouseButtonPressed(0) || InputManager.isPressed(KeyEvent.VK_UP) || InputManager.isPressed(KeyEvent.VK_SPACE))
+            {
+
+
+                hasLost = false;
+                GameLevelManager.goToLevel(new Level1());
+                Level1.score = 0;
+
+            }
+
+            return;
+        }
+
+
         score += .15;
-        score = 500;
         display.displayNumber((int)score);
         if(score < 401) {
             n = rand.nextInt(99) + 1;

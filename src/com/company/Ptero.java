@@ -28,7 +28,7 @@ public class Ptero extends GameObject{
             y = -7;
         }
         else if (n == 2){
-            y = 15;
+            y = 16;
         }
         else if(n == 3){
             y = 40;
@@ -39,7 +39,9 @@ public class Ptero extends GameObject{
         @Override
         public void update(float dt) {
             x -= 3 + Level1.score / 500;
-            setPositionX(x);
+
+            if(!Level1.hasLost)
+                setPositionX(x);
 
             if(idleTimer <= 0.0f)
             {

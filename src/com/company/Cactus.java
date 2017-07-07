@@ -4,6 +4,7 @@ import edu.digipen.gameobject.GameObject;
 import edu.digipen.gameobject.ObjectManager;
 import edu.digipen.math.Vec2;
 import java.util.Random;
+import java.util.logging.Level;
 
 public class Cactus extends GameObject{
 
@@ -41,7 +42,10 @@ public class Cactus extends GameObject{
 
         @Override
     public void update(float dt) {
-        x -= 3 + Level1.score / 500;
-        setPositionX(x);
+            if(!Level1.hasLost)
+            {
+                x -= 3 + Level1.score / 500;
+                setPositionX(x);
+            }
     }
 }
