@@ -41,7 +41,7 @@ public class Level1 extends GameLevel {
 
         display = new ScoreDisplay(17, 13, 290, 230);
 
-        Graphics.setDrawCollisionData(true);
+        Graphics.setDrawCollisionData(false);
 
         Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
 
