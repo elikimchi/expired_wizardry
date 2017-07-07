@@ -138,14 +138,16 @@ public class Dinosaur extends GameObject{
         
         else
         {
-            if(duckHitBox != null && isDucking)
+            if(duckHitBox != null && isDucking && InputManager.isPressed(KeyEvent.VK_0))
             {
                 duckHitBox.destroy();
                 runHitBox = new TempRun();
                 isDucking = false;
             }
         }
-
+        if(InputManager.isPressed(KeyEvent.VK_0)){
+            runHitBox.destroy();
+        }
         if(Level1.hasLost == true){
             goToAndStop(3);
         }

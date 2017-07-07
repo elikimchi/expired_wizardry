@@ -76,6 +76,7 @@ public class Level1 extends GameLevel {
     boolean spacePressed = false;
     @Override
     public void update(float dt) {
+
         if(hasLost)
         {
             GameObject hibutton = new High();
@@ -143,6 +144,7 @@ public class Level1 extends GameLevel {
                 ObjectManager.addGameObject(cloud);
             }
         }
+
         GameObject hibutton = new High();
         ObjectManager.addGameObject(hibutton);
         if(score > high){
