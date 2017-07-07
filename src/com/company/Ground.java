@@ -21,7 +21,7 @@ public class Ground extends GameObject {
         x = getPositionX();
         x -= 3 + Level1.score / 500;
         if (x < -1086){
-            x = 1088;
+            x = 1086;
         }
 
         if(!Level1.hasLost)
