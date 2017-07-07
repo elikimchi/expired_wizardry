@@ -3,6 +3,7 @@ package com.company;
 
 import com.sun.corba.se.impl.orbutil.graph.Graph;
 import com.sun.deploy.uitoolkit.Window;
+import com.sun.media.jfxmediaimpl.platform.ios.IOSPlatform;
 import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.gameobject.ObjectManager;
@@ -14,6 +15,7 @@ import javafx.scene.input.MouseButton;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.io.*;
 import java.security.Key;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -58,10 +60,23 @@ public class Level1 extends GameLevel {
 
     }
 
-
+    public void readFile()
+    {
+         //FileOutputStream out = new FileOutputStream("Out.txt");
+        try {
+            BufferedWriter out = new BufferedWriter(new FileWriter("test.txt"));
+            out.write("test\n");  //Replace with the string
+            //you are trying to write
+            out.close();
+        }
+        catch (IOException e)
+        {
+            return;
+        }
+    }
 
     @Override
-    public void initialize() {
+    public void initialize(){
 
     }
 
@@ -69,7 +84,7 @@ public class Level1 extends GameLevel {
     boolean spacePressed = false;
     @Override
     public void update(float dt) {
-
+        readFile();
         if(hasLost)
         {
             RestartButton restartButton = new RestartButton();

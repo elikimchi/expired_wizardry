@@ -3,8 +3,6 @@ package com.company;
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.math.Vec2;
 
-import javax.swing.*;
-
 /**
  * Created by jack.notarangelo on 7/3/2017.
  */
