@@ -27,6 +27,7 @@ public class Level1 extends GameLevel {
     float spawncounter = 0;
     float clouddeadtime = 0;
     float cloudspawncounter = 0;
+    static float high = 0;
     Random rand = new Random();
     int  n;
     public static float score = 0;
@@ -34,12 +35,14 @@ public class Level1 extends GameLevel {
     public static boolean hasLost = false;
 
     ScoreDisplay display;
+    ScoreDisplay hi;
 
     @Override
     public void create() {
 
 
         display = new ScoreDisplay(17, 13, 290, 230);
+        hi = new ScoreDisplay(17, 13, 200, 230);
 
         Graphics.setDrawCollisionData(false);
 
@@ -62,20 +65,7 @@ public class Level1 extends GameLevel {
 
     }
 
-    public void readFile()
-    {
-         //FileOutputStream out = new FileOutputStream("Out.txt");
-        try {
-            BufferedWriter out = new BufferedWriter(new FileWriter("test.txt"));
-            out.write("test\n");  //Replace with the string
-            //you are trying to write
-            out.close();
-        }
-        catch (IOException e)
-        {
-            return;
-        }
-    }
+
 
     @Override
     public void initialize(){
@@ -86,9 +76,11 @@ public class Level1 extends GameLevel {
     boolean spacePressed = false;
     @Override
     public void update(float dt) {
-        readFile();
         if(hasLost)
         {
+            GameObject hibutton = new High();
+            ObjectManager.addGameObject(hibutton);
+            hi.displayNumber((int) high);
             RestartButton restartButton = new RestartButton();
             ObjectManager.addGameObject(restartButton);
             GameObject gameover = new Gameover();
@@ -151,6 +143,12 @@ public class Level1 extends GameLevel {
                 ObjectManager.addGameObject(cloud);
             }
         }
+        GameObject hibutton = new High();
+        ObjectManager.addGameObject(hibutton);
+        if(score > high){
+            high = score;
+        }
+        hi.displayNumber((int) high);
 
         upPressed = InputManager.isPressed(KeyEvent.VK_UP);
         spacePressed = InputManager.isPressed(KeyEvent.VK_SPACE);

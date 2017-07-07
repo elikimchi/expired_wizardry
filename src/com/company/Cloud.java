@@ -14,7 +14,7 @@ public class Cloud extends GameObject {
         super("cloud", 52, 23, "cloud.png");
         x = 600.0f;
         Random rand = new Random();
-        y = rand.nextInt(180) + 100;
+        y = rand.nextInt(160) + 100;
         setPosition(x, y);
     }
     @Override public void update(float dt){
