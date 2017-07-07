@@ -33,7 +33,7 @@ public class Dinosaur extends GameObject{
         ystart = getPositionY();
         y = getPositionY();
         up = 0;
-        yjump = getPositionY() + 120;
+        yjump = getPositionY() + 105;
         run = 0;
 
         runHitBox = new TempRun();
@@ -82,14 +82,14 @@ public class Dinosaur extends GameObject{
 
 
         if ( up == 1 && y < yjump){
-            y += 3;
+            y += 2.5;
             setPositionY(y);
         }
         else if(up == 1 && y == yjump){
             up = 2;
         }
         else if(up == 2 && y > ystart){
-            y -= 4;
+            y -= 3;
             setPositionY(y);
         }
         else if(up == 1 && y == ystart){
@@ -98,7 +98,7 @@ public class Dinosaur extends GameObject{
         }
         else if(InputManager.isPressed(KeyEvent.VK_UP) || InputManager.isPressed(KeyEvent.VK_SPACE)) {
             up = 1;
-            y += 3;
+            y += 2.5;
             setPositionY(y);
             animationData.goToAndStop(2);
             isJumping = true;
@@ -107,7 +107,7 @@ public class Dinosaur extends GameObject{
         if(InputManager.isPressed(KeyEvent.VK_DOWN)) {
 
 
-            if(runHitBox != null && isDucking == false)
+            if(runHitBox != null && !isDucking)
             {
                 runHitBox.destroy();
                 duckHitBox = new TempDuck();
@@ -131,7 +131,8 @@ public class Dinosaur extends GameObject{
 
             animationData.play();
 
-            y  = ystart;
+            y = ystart;
+            up = 2;
             setPositionY(y);
         }
         
