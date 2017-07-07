@@ -2,6 +2,7 @@ package com.company;
 
 import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject;
+import javafx.animation.Animation;
 
 import java.awt.event.KeyEvent;
 
@@ -44,6 +45,7 @@ public class Dinosaur extends GameObject{
     @Override
     public void update(float dt)
     {
+
         if(isJumping)
         {
             if(jumpDelayTimer <= 0.0f)
@@ -143,6 +145,9 @@ public class Dinosaur extends GameObject{
             }
         }
 
+        if(Level1.hasLost == true){
+            goToAndStop(3);
+        }
 
     }
 

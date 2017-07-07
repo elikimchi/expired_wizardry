@@ -15,6 +15,7 @@ import javafx.scene.input.MouseButton;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 
@@ -35,7 +36,7 @@ public class Level1 extends GameLevel {
 
         display = new ScoreDisplay(17, 13, 290, 230);
 
-        Graphics.setDrawCollisionData(true);
+        Graphics.setDrawCollisionData(false);
 
         Graphics.setBackgroundColor(0.96862745098f, 0.96862745098f, 0.96862745098f);
 
@@ -74,7 +75,6 @@ public class Level1 extends GameLevel {
             ObjectManager.addGameObject(gameover);
             if(InputManager.isMouseButtonPressed(0) || InputManager.isPressed(KeyEvent.VK_UP) || InputManager.isPressed(KeyEvent.VK_SPACE))
             {
-
 
                 hasLost = false;
                 GameLevelManager.goToLevel(new Level1());
